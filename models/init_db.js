@@ -1,8 +1,9 @@
 const Sequelize = require('sequelize')
 const TrackModel = require('./track')
 const UserModel = require('./user')
+require('dotenv').config()
 
-const sequelize = new Sequelize(process.env.REACT_APP_NAME_DATABASE, process.env.REACT_APP_USERNAME, process.env.REACT_APP_PASSWORD, {
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.USER_NAME, process.env.USER_PASSWORD, {
     dialect: 'postgres',
     host: 'localhost',
     port: Number(5432),
